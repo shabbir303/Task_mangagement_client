@@ -10,6 +10,7 @@ const Header = () => {
                 </Navbar.Brand>
                 <div className="flex md:order-2">
                     <Dropdown
+                        className="bg-opacity-50 "
                         arrowIcon={false}
                         inline
                         label={
