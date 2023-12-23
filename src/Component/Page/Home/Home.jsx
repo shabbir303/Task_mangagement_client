@@ -3,6 +3,7 @@ import ReactiveButton from "reactive-button";
 import Slider from "./Slider";
 import { Helmet } from "react-helmet";
 import Opinion from "./Opinion";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
@@ -16,9 +17,13 @@ const Home = () => {
                         <span className="text-amber-500">Efficiently.</span></h1>
                     <p className="mt-3 text-white font-serif text-2xl">Plan, Track and Organise your work.</p>
                     <p className="mt-3 text-teal-400 font-serif">An Intranet platform to Manage projects, organise work and focus on what’s important.</p>
-                    <ReactiveButton className="mt-3 font-serif" color="teal" rounded shadow size="large" idleText="Let’s Explore "></ReactiveButton>
+                    <Link to='/dashboard'>
+                        <ReactiveButton className="mt-3 font-serif" color="teal" rounded shadow size="large" idleText="Let’s Explore "></ReactiveButton>
+                    </Link>
                 </div>
-                <Slider></Slider>
+                <div>
+                    <Slider></Slider>
+                </div>
             </div>
             <div className="my-[100px]">
                 <Opinion></Opinion>
