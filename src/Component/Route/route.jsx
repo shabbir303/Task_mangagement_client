@@ -9,6 +9,7 @@ import Create from "../Dashboard/Create";
 import DashLy from "../Layout/DashLy";
 import Login from "../Page/Authentication/Login";
 import Register from "../Page/Authentication/Register";
+import PrivateRoute from "./PrivateRoute";
 const route = createBrowserRouter([
     {
         path: "/",
@@ -30,7 +31,7 @@ const route = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashLy></DashLy>,
+        element: <PrivateRoute><DashLy></DashLy></PrivateRoute>,
         children: [
             {
                 path:'create',

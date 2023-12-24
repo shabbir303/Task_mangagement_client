@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from './AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
@@ -83,10 +83,9 @@ const Login = () => {
                                         </button>
                                     </div>
                                 </div>
-                                <div className="pt-5 text-center text-gray-400 text-xs">
-                                    <span>
-                                        Copyright © 2023-2024
-                                        <a href="https://codepen.io/uidesignhub" rel="" target="_blank" title="Ajimon" className="text-green hover:text-green-500 ">TASK MANAGEMENT</a></span>
+                                <div className="pt-5 text-center text-gray-400 text-base">
+                                    <p>Don't have an account <Link to='/register'><span className='text-cyan-600 font-semibold'>Register here</span></Link> </p>
+                                        
                                 </div>
                             </div>
                         </div>

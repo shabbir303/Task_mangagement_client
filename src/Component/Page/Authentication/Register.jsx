@@ -1,11 +1,11 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-    const location = useLocation();
+    // const location = useLocation();
     const navigate = useNavigate();
     const { createUser, googleLogin } = useContext(AuthContext);
     const {
@@ -28,7 +28,7 @@ const Register = () => {
             })
             .then(res => {
                 if (res.data.inserted) {
-                    navigate('/');
+                    // navigate('/');
                 }
             })
             .catch(err => console.log(err.message));
