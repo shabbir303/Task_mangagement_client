@@ -8,34 +8,51 @@ import Profile from '../Dashboard/Profile';
 const Dashboard = () => {
     return (
         <div >
-            <Sidebar aria-label="Sidebar with content   "  className="h-screen bg-cover bg-black bg-blend-overlay  bg-fixed">
-                 <Profile></Profile>
+            <Sidebar aria-label="Sidebar with content   " className="h-screen bg-cover bg-black bg-blend-overlay  bg-fixed">
+                <Profile></Profile>
                 <Sidebar.Items className='mt-4'>
                     <Sidebar.ItemGroup>
-                        <Sidebar.Item href="#" icon={HiChartPie}>
-                            Dashboard
-                        </Sidebar.Item>
+
                         <NavLink to="create"
-                          style={({ isActive }) => {
-                            return {
-                                fontWeight: isActive ? "bold" : "",
-                                color: isActive ? "blue" : "white",
-                                // textDecoration: isActive ? "uppercase" : '',
-                                fontFamily: isActive ? 'serif' : '',
-                                fontSize: isActive ? "25px" : '',
-                                backgroundColor:isActive? "blue":"",
-                                fontStyle: isActive ?'italic':''
-                            };
-                        }}
+                            style={({ isActive }) => {
+                                return {
+                                    fontWeight: isActive ? "bold" : "",
+                                    color: isActive ? "blue" : "white",
+                                    // textDecoration: isActive ? "uppercase" : '',
+                                    fontFamily: isActive ? 'serif' : '',
+                                    fontSize: isActive ? "25px" : '',
+                                    backgroundColor: isActive ? "blue" : "",
+                                    fontStyle: isActive ? 'italic' : ''
+                                };
+                            }}
                         >
-                            <Sidebar.Item  icon={HiViewBoards}>
+                            <Sidebar.Item icon={HiViewBoards}>
                                 Create Task
                             </Sidebar.Item>
                         </NavLink>
-                        <Sidebar.Item href="#" icon={HiInbox}>
-                            Inbox
+
+                        <Sidebar.Item href="#" icon={HiChartPie}>
+                            Manage Task
                         </Sidebar.Item>
-                        
+                        <NavLink to="manageTask"
+                            style={({ isActive }) => {
+                                return {
+                                    fontWeight: isActive ? "bold" : "",
+                                    color: isActive ? "blue" : "white",
+                                    // textDecoration: isActive ? "uppercase" : '',
+                                    fontFamily: isActive ? 'serif' : '',
+                                    fontSize: isActive ? "25px" : '',
+                                    backgroundColor: isActive ? "blue" : "",
+                                    fontStyle: isActive ? 'italic' : ''
+                                };
+                            }}
+                        >
+                            <Sidebar.Item icon={HiInbox}>
+                                Drag Tasks
+                            </Sidebar.Item>
+                        </NavLink>
+
+
                     </Sidebar.ItemGroup>
                     <Sidebar.ItemGroup>
                         <NavLink to='/'>
@@ -43,16 +60,18 @@ const Dashboard = () => {
                                 Home
                             </Sidebar.Item>
                         </NavLink>
-                        <Sidebar.Item href="#" icon={HiViewBoards}>
-                            Documentation
-                        </Sidebar.Item>
+                        <NavLink to='/login'>
+                            <Sidebar.Item href="#" icon={HiViewBoards}>
+                                Login
+                            </Sidebar.Item>
+                        </NavLink>
                         <Sidebar.Item href="#" icon={BiBuoy}>
                             Help
                         </Sidebar.Item>
                     </Sidebar.ItemGroup>
                 </Sidebar.Items>
             </Sidebar>
-            
+
         </div>
     );
 };

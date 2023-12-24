@@ -10,6 +10,7 @@ import DashLy from "../Layout/DashLy";
 import Login from "../Page/Authentication/Login";
 import Register from "../Page/Authentication/Register";
 import PrivateRoute from "./PrivateRoute";
+import ManageTask from "../Page/Dashboard/ManageTask";
 const route = createBrowserRouter([
     {
         path: "/",
@@ -36,6 +37,10 @@ const route = createBrowserRouter([
             {
                 path:'create',
                 element: <Create></Create>
+            },
+            {
+               path:"manageTask",
+               element:<ManageTask></ManageTask>
             }
         ]
     }

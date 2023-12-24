@@ -2,7 +2,7 @@
 
 const Create = () => {
     return (
-        <div className="max-w-[600px]">
+        <div className="max-w-[600px] mt-[150px]">
 
 
             <form className="w-full bg-white p-[100px] bg-opacity-15 text-white font-serif">

@@ -7,7 +7,7 @@ const DashLy = () => {
         <div  style={{ backgroundImage: `url(${bg})` }} className='flex  bg-cover bg-fixed  gap-[200px]'>
             
             <Dashboard></Dashboard>
-            <div className=" mt-[150px]">
+            <div className="  w-[100%] h-full">
             <Outlet></Outlet>
             </div>
             
