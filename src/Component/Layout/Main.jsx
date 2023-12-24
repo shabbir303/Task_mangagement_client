@@ -7,7 +7,7 @@ import Foter from "../Page/Footer/Footer";
 const Main = () => {
     const location = useLocation();
     const noHeaderFooter = location.pathname.includes('/login') || location.pathname.includes('/register');
-    const bgClass = noHeaderFooter? "h-screen" :"";
+    const bgClass = noHeaderFooter? "h-screen " :"";
     return (
         <>
             <div style={{ backgroundImage: `url(${bg})` }} className={`bg-cover w-full  bg-fixed ${bgClass}`}>

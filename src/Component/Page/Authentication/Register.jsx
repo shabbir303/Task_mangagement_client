@@ -45,7 +45,7 @@ const Register = () => {
     }
     return (
         <div>
-            <div className="relative bg-gradient-to-bl from-blue-100 via-transparent dark:from-blue-950 dark:via-transparent">
+            <div className="pt-[100px] relative bg-gradient-to-bl from-blue-100 via-transparent dark:from-blue-950 dark:via-transparent">
                 <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
 
                     <div className="grid items-center md:grid-cols-2 gap-8 lg:gap-12">
