@@ -4,6 +4,7 @@ import Slider from "./Slider";
 import { Helmet } from "react-helmet";
 import Opinion from "./Opinion";
 import { Link } from "react-router-dom";
+import Targeted from "./Targeted";
 
 const Home = () => {
     return (
@@ -24,6 +25,9 @@ const Home = () => {
                 <div>
                     <Slider></Slider>
                 </div>
+            </div>
+            <div className="my-[100px]">
+                <Targeted></Targeted>
             </div>
             <div className="my-[100px]">
                 <Opinion></Opinion>

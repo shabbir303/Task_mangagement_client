@@ -8,7 +8,8 @@ import Profile from '../Page/Dashboard/Profile';
 const Dashboard = () => {
     return (
         <div >
-            <Sidebar aria-label="Sidebar with content   " className="h-screen bg-cover bg-black bg-blend-overlay  bg-fixed">
+            <Sidebar aria-label="Sidebar with content" className="h-screen bg-cover bg-black bg-blend-overlay  bg-fixed"
+            >
                 <Profile></Profile>
                 <Sidebar.Items className='mt-4'>
                     <Sidebar.ItemGroup>
