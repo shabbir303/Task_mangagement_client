@@ -1,8 +1,8 @@
 
 const Ongoing = () => {
     return (
-        <div className="bg-white opacity-15 max-w-[400px] rounded-2xl h-full">
-            <h1 className="text-[25px]"></h1>
+        <div className="bg-white bg-opacity-15 max-w-[400px] rounded-2xl h-full">
+            <h1 className="text-[25px] text-center font-serif font-semibold">Ongoing Task</h1>
         </div>
     );
 };

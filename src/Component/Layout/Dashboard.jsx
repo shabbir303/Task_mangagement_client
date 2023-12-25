@@ -3,7 +3,7 @@ import { BiBuoy } from 'react-icons/bi';
 import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from 'react-icons/hi';
 import './style.css';
 import { NavLink } from 'react-router-dom';
-import Profile from '../Dashboard/Profile';
+import Profile from '../Page/Dashboard/Profile';
 
 const Dashboard = () => {
     return (
@@ -13,7 +13,7 @@ const Dashboard = () => {
                 <Sidebar.Items className='mt-4'>
                     <Sidebar.ItemGroup>
 
-                        <NavLink to="create"
+                        <NavLink to='/dashboard'
                             style={({ isActive }) => {
                                 return {
                                     fontWeight: isActive ? "bold" : "",
@@ -31,9 +31,23 @@ const Dashboard = () => {
                             </Sidebar.Item>
                         </NavLink>
 
-                        <Sidebar.Item href="#" icon={HiChartPie}>
-                            Manage Task
-                        </Sidebar.Item>
+                        <NavLink to="crud"
+                            style={({ isActive }) => {
+                                return {
+                                    fontWeight: isActive ? "bold" : "",
+                                    color: isActive ? "blue" : "white",
+                                    // textDecoration: isActive ? "uppercase" : '',
+                                    fontFamily: isActive ? 'serif' : '',
+                                    fontSize: isActive ? "25px" : '',
+                                    backgroundColor: isActive ? "blue" : "",
+                                    fontStyle: isActive ? 'italic' : ''
+                                };
+                            }}
+                        >
+                            <Sidebar.Item href="#" icon={HiChartPie}>
+                                Manage Task
+                            </Sidebar.Item>
+                        </NavLink>
                         <NavLink to="manageTask"
                             style={({ isActive }) => {
                                 return {

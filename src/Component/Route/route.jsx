@@ -5,12 +5,13 @@ import {
 import Main from "../Layout/Main";
 import Home from "../Page/Home/Home";
 // import Dashboard from "../Layout/Dashboard";
-import Create from "../Dashboard/Create";
+import Create from "../Page/Dashboard/Create";
 import DashLy from "../Layout/DashLy";
 import Login from "../Page/Authentication/Login";
 import Register from "../Page/Authentication/Register";
 import PrivateRoute from "./PrivateRoute";
 import ManageTask from "../Page/Dashboard/ManageTask";
+import Crud from "../Page/Dashboard/Crud";
 const route = createBrowserRouter([
     {
         path: "/",
@@ -31,16 +32,20 @@ const route = createBrowserRouter([
         ]
     },
     {
-        path: '/dashboard',
+        path: "/dashboard",
         element: <PrivateRoute><DashLy></DashLy></PrivateRoute>,
         children: [
             {
-                path:'create',
+                path:'/dashboard',
                 element: <Create></Create>
             },
             {
                path:"manageTask",
                element:<ManageTask></ManageTask>
+            },
+            {
+               path: "crud",
+               element:<Crud></Crud>
             }
         ]
     }
