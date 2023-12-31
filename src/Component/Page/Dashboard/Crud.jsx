@@ -5,8 +5,9 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 import { Badge } from 'flowbite-react';
+import { motion } from "framer-motion";
 const Crud = () => {
-    const [tasks,refetch] = useTasks();
+    const [tasks, refetch] = useTasks();
     const axiosPublic = useAxiosPublic();
 
     const handleDelete = (tasks) => {
@@ -36,53 +37,81 @@ const Crud = () => {
         })
     }
     console.log(tasks);
+
+    const container = {
+        hidden: { opacity: 1, scale: 0 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                delayChildren: 0.5,
+                staggerChildren: 0.2
+            }
+        }
+    };
+
+    const item = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1
+        }
+    };
     return (
         <>
-        <h1 className=" text-[30px] mt-10 text-yellow-700 font-semibold font-serif  max-w-5xl text-center ">All Tasks are showing here</h1>
-       <div className="grid grid-cols-1 mb-10">
-       {tasks?.map (task=> <div key={task._id} className="max-w-5xl my-[20px] bg-indigo-900 shadow-xl shadow-black rounded-xl">
-            
-            <a
-                href="#"
-                className="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
+           
+            <h1 className=" text-[30px] mt-10 text-yellow-700 font-semibold font-serif  max-w-5xl text-center ">All Tasks are showing here</h1>
+            <div className="grid grid-cols-1 mb-10">
+            <motion.ul
+                className="container"
+                variants={container}
+                initial="hidden"
+                animate="visible"
             >
-                <span
-                    className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
-                ></span>
+                {tasks?.map(task => <motion.li className="item" variants={item}  key={task._id}><div className="max-w-5xl my-[20px] bg-indigo-900 shadow-xl shadow-black rounded-xl">
 
-                <div className="sm:flex sm:justify-between sm:gap-4">
-                    <div className="flex items-center gap-3">
-                        <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
-                            {task.title}
-                        </h3>
-                        {
-                          task?.priroty==="Low" && <Badge color="failure">{task.priroty}</Badge>||task?.priroty==="High" && <Badge color="success">{task.priroty}</Badge> ||task?.priroty==="Moderate" && <Badge color="warning">{task.priroty}</Badge>
-                        }
-                        
-                    </div>
+                    <a
+                        href="#"
+                        className="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
+                    >
+                        <span
+                            className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
+                        ></span>
 
-                    <div className="hidden sm:block sm:shrink-0">
-                    <div className="flex flex-col items-center gap-2 ">
-                        <dt className="text-lg font-medium text-gray-400 ">Last Date of Submission</dt>
-                        <dd className="text-base text-gray-500">{task.deadLine} </dd>
-                    </div>
-                    </div>
-                </div>
+                        <div className="sm:flex sm:justify-between sm:gap-4">
+                            <div className="flex items-center gap-3">
+                                <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
+                                    {task.title}
+                                </h3>
+                                {
+                                    task?.priroty === "Low" && <Badge color="failure">{task.priroty}</Badge> || task?.priroty === "High" && <Badge color="success">{task.priroty}</Badge> || task?.priroty === "Moderate" && <Badge color="warning">{task.priroty}</Badge>
+                                }
 
-                <div className="mt-4 flex justify-between ">
-                    <p className="max-w-[40ch] text-sm text-gray-500">
-                        {task.des}
-                    </p>
-                    <div className="flex  gap-3 items-center  justify-center">
-                        <Button className="flex items-center  justify-center gap-1">Want To edit task<CiEdit /></Button>            
-                        <Button onClick={handleDelete} className="flex items-center  justify-center gap-1" color="failure">Want To Delete task<RiDeleteBin6Line /></Button>
-                    </div>
-                </div>
-            </a>
-        </div>)}
-       </div>
+                            </div>
+
+                            <div className="hidden sm:block sm:shrink-0">
+                                <div className="flex flex-col items-center gap-2 ">
+                                    <dt className="text-lg font-medium text-gray-400 ">Last Date of Submission</dt>
+                                    <dd className="text-base text-gray-500">{task.deadLine} </dd>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mt-4 flex justify-between ">
+                            <p className="max-w-[40ch] text-sm text-gray-500">
+                                {task.des}
+                            </p>
+                            <div className="flex  gap-3 items-center  justify-center">
+                                <Button className="flex items-center  justify-center gap-1">Want To edit task<CiEdit /></Button>
+                                <Button onClick={handleDelete} className="flex items-center  justify-center gap-1" color="failure">Want To Delete task<RiDeleteBin6Line /></Button>
+                            </div>
+                        </div>
+                    </a>
+                </div></motion.li>)}
+                </motion.ul>
+            </div>
         </>
-        
+
     );
 };
 
